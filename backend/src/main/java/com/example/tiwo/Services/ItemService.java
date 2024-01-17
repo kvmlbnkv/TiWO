@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class ItemService {
@@ -20,15 +21,16 @@ public class ItemService {
     public ItemEntity createItem(ItemEntity itemEntity){
         return itemRepository.save(itemEntity);
     }
-
+    /*
     public void deleteItem(Long id){
         itemRepository.delete(itemRepository.getReferenceById(id));
     }
 
+
     public Optional<ItemEntity> getItem(Long id){
         return itemRepository.findById(id);
     }
-
+    */
     public Optional<ItemEntity> getItem(String name){
         return itemRepository.getByName(name);
     }
@@ -36,6 +38,7 @@ public class ItemService {
     public List<ItemEntity> getAllItems(){
         return itemRepository.findAll();
     }
+    /*
     public ItemEntity updateItem(Long id, ItemEntity itemEntity){
         Optional<ItemEntity> item = itemRepository.findById(id);
         if(item.isPresent()){
@@ -50,5 +53,5 @@ public class ItemService {
             throw(new NullPointerException());
         }
     }
-
+    */
 }

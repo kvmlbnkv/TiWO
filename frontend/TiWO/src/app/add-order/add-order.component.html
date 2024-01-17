@@ -1,0 +1,27 @@
+
+
+<h3>Dodaj zamówienie</h3>
+<form>
+  <p>Przedmiot:</p>
+  <input type="text" id="item" class="fadeIn second" [(ngModel)]="itemName" name="item" placeholder="przedmiot">
+  <select [(ngModel)]="listItem" name="listItem">
+    <option *ngFor="let item of items" value="{{item.name}}">
+      {{item.name}}
+    </option>
+  </select>
+  <button (click)=itemFromList()>Dodaj z listy</button>
+  <br>
+  <p>Ilość:</p>
+  <input type="text" id="amount" class="fadeIn third" [(ngModel)]="amount_str" name="amount" placeholder="ilość">
+  <br>
+  <p>Gramatura:</p>
+  <select id="grammageSelect" [(ngModel)]="grammage" name="grammage">
+    <option *ngFor="let g of grammages" value="{{g}}">
+      {{g}}
+    </option>
+  </select>
+  <br>
+  <br>
+  <input type="submit" id="add" (click)=addOrder() class="fadeIn fourth" value="Dodaj">
+  <div *ngIf="errorMessageDisplay">{{errorMessage}}</div>
+</form>

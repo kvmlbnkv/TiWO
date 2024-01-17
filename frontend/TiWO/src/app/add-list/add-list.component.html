@@ -1,0 +1,11 @@
+
+
+<h3>Dodaj listę</h3>
+<form>
+  <p>Nazwa nowej listy:</p>
+  <input type="text" id="name" class="fadeIn second" [(ngModel)]="name" name="name" placeholder="nazwa">
+  <p>Data:</p>
+  <input type="text" id="date" class="fadeIn third" [(ngModel)]="datestr" name="date" placeholder="YYYY-MM-DD">
+  <input type="submit" id="addButton" (click)=addList() class="fadeIn fourth" value="Dodaj">
+  <div *ngIf="errorMessageDisplay">{{errorMessage}}</div>
+</form>

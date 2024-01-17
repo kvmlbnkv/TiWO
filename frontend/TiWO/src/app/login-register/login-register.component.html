@@ -1,0 +1,27 @@
+<div class="wrapper fadeInDown">
+  <div id = "login">
+    <h3>Logowanie</h3>
+    <form>
+      <input type="text" id="usernameLogin" class="fadeIn second" [(ngModel)]="usernameLogin" name="usernameLogin" placeholder="username">
+      <input type="password" id="passwordLogin" class="fadeIn third" [(ngModel)]="passwordLogin" name="passwordLogin" placeholder="password">
+      <br>
+      <input type="submit" id="loginButton" (click)=handleLogin() class="fadeIn fourth" value="Login">
+    </form>
+    <div *ngIf="invalidLogin">{{loginErrorMessage}}</div>
+    <div *ngIf="loginSucces">{{loginSuccessMessage}}</div>
+  </div>
+
+  <div id = "register">
+    <h3>Rejestracja</h3>
+    <form>
+      <input type="text" id="emailRegister" class="fadeIn fifth" [(ngModel)]="emailRegister" name="emailRegister" placeholder="email">
+      <input type="text" id="usernameRegister" class="fadeIn sixth" [(ngModel)]="usernameRegister" name="usernameRegister" placeholder="username">
+      <input type="password" id="passwordRegister" class="fadeIn seventh" [(ngModel)]="passwordRegister" name="passwordRegister" placeholder="password">
+      <br>
+      <input type="submit" id="registerButton" (click)=handleRegistration() class="fadeIn eigth" value="Rejestracja">
+    </form>
+    <div *ngIf="invalidRegister">{{registerErrorMessage}}</div>
+    <div *ngIf="registerSucces">{{registerSuccessMessage}}</div>
+  </div>
+
+</div>

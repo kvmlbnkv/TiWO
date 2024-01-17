@@ -1,0 +1,24 @@
+<button id='logoutButton' (click)=logout()>Wyloguj</button>
+<br>
+<br>
+<button (click)=showLists()>Odśwież listy</button>
+<p>--------------------------------------------------------------</p>
+
+<div class="container" *ngFor="let list of lists">
+  <p>{{list.name}}</p>
+  <table class="table table-borded">
+    <tr *ngFor="let order of list.orders" [ngClass]="!order.realized ? 'null' : 'strikethrough'">
+      <td id="orderClick" (click)=realizeOrder(order.id)>{{order.item.name}}</td>
+      <td>{{order.item.description}}</td>
+      <td>{{order.amount}}</td>
+      <td>{{order.grammage}}</td>
+    </tr>
+    <button id="addOrderButton" (click)=addOrder(list.id) >Dodaj zamówienie</button>
+  </table>
+  <p>{{list.date | date: 'mediumDate'}}</p>
+  <button id="editButton" (click)=updateList(list.id)>Edytuj listę</button>
+  <button id="deleteButton" (click)=deleteList(list.id)>Usuń listę</button>
+  <p>--------------------------------------------------------------</p>
+</div>
+
+<button id="addListButton" (click)=addList()>Dodaj listę</button>

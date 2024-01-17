@@ -1,0 +1,12 @@
+
+
+<h3>Edytuj listę</h3>
+<form>
+  <p>Nowa nazwa listy:</p>
+  <input type="text" id="name" class="fadeIn second" [(ngModel)]="name" name="name" placeholder="nazwa">
+  <p>Nowa data:</p>
+  <input type="text" id="date" class="fadeIn third" [(ngModel)]="datestr" name="date" placeholder="YYYY-MM-DD">
+  <br>
+  <input type="submit" id="update" (click)=updateList() class="fadeIn fourth" value="Edytuj">
+  <div *ngIf="errorMessageDisplay">{{errorMessage}}</div>
+</form>
